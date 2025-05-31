@@ -7,4 +7,13 @@
 {% block content %}
     <h2>Seção de Perguntas e Respostas</h2>
     <p>Faça sua pergunta sobre programação e obtenha uma resposta da API do Gemini.</p>
+    <form action="/qa" method="post">
+        <label for="question">Faça sua pergunta:</label>
+        <input type="text" id="question" name="question" required>
+        <button type="submit">Enviar</button>
+    </form>
+    {% if answer %}
+        <h3>Resposta:</h3>
+        <p>{{ answer }}</p>
+    {% endif %}
 {% endblock %}
