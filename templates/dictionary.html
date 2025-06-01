@@ -7,4 +7,21 @@
 {% block content %}
     <h2>Dicionário de Termos de Programação</h2>
     <p>Explore, adicione, altere e delete termos de programação.</p>
+
+    <h3>Termos:</h3>
+    <ul>
+        {% for term, definition in terms.items() %}
+            <li>
+                 <a href=""></a>
+                <strong>{{ term }}:</strong> {{ definition }}
+                <a href="{{ url_for('edit_term', term=term) }}">Editar</a> |
+                <form action="{{ url_for('delete_term', term=term) }}" method="POST" style="display:inline;">
+                    <button type="submit">Deletar</button>
+                </form>
+
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ url_for('add_term') }}">Adicionar Novo Termo</a>
 {% endblock %}

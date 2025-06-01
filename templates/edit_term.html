@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Termo{% endblock %}
+
+{% block content %}
+    <h2>Editar Termo</h2>
+    <form method="POST">
+        <label for="term">Termo:</label>
+        <input type="text" id="term" name="term" value="{{ term }}" required><br><br>
+
+        <label for="definition">Definição:</label>
+        <textarea id="definition" name="definition" required>{{ definition }}</textarea><br><br>
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+    <br><a href="{{ url_for('dictionary') }}">Voltar para o Dicionário</a>
+{% endblock %}
