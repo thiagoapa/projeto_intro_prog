@@ -1,21 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
-from google import genai
+from gemini import get_gemini_response
 
 app = Flask(__name__)
-
-# Inicializar o cliente da API do Gemini
-client = genai.Client(api_key="AIzaSyAGDtq21JCS4kMhw9qmGXSBwIwSF3v854Q")
-
-# Função para chamar a API do GEMINI usando a biblioteca genai
-def get_gemini_response(question):
-    try:
-        response = client.models.generate_content(
-            model="gemini-2-0-flash",
-            contents=f"Explain: {question}"
-        )
-        return response.text
-    except Exception as e:
-        return f"Erro ao conectar com a API: {str(e)}"
 
 # Página inicial
 @app.route('/')
