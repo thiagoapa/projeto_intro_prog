@@ -1,17 +1,23 @@
-{% extends "base.html" %}
-
-{% block title %}Editar Termo{% endblock %}
+{% extends "base_dic.html" %}
 
 {% block content %}
-    <h2>Editar Termo</h2>
-    <form method="POST">
-        <label for="term">Termo:</label>
-        <input type="text" id="term" name="term" value="{{ term }}" required><br><br>
+    <h1>Alterar Definição de Termo</h1>
+    {% if termos %}
+        <form method="POST" action="{{ url_for('alterar') }}">
+            <label for="termo_selecionado">Selecionar Termo:</label>
+            <select id="termo_selecionado" name="termo_selecionado" required>
+                <option value="">-- Selecione um termo --</option>
+                {% for termo, definicao in termos.items() %}
+                    <option value="{{ termo }}">{{ termo }}</option>
+                {% endfor %}
+            </select>
 
-        <label for="definition">Definição:</label>
-        <textarea id="definition" name="definition" required>{{ definition }}</textarea><br><br>
+            <label for="nova_definicao">Nova Definição:</label>
+            <textarea id="nova_definicao" name="nova_definicao" rows="5" required></textarea>
 
-        <button type="submit">Salvar Alterações</button>
-    </form>
-    <br><a href="{{ url_for('dictionary') }}">Voltar para o Dicionário</a>
+            <input type="submit" value="Alterar Definição">
+        </form>
+    {% else %}
+        <p>Não há termos para alterar. Adicione um termo primeiro na seção de <a href="{{ url_for('adicionar') }}">Adicionar Termo</a>.</p>
+    {% endif %}
 {% endblock %}
