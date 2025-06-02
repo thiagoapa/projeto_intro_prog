@@ -1,29 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff; /* fundo branco */
     color: #333;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em 0;
+    background-color: #306998; /* azul escuro Python */
+    color: #ffffff;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    padding-bottom: 0.5em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 10px 20px; /* 10px cima/baixo, 20px lados */
     margin: 0;
-    display: flex; /* Para que los elementos estén en fila */
-    justify-content: center; /* Para centrarlos */
+    display: flex;
+    justify-content: center;
+    background-color: #4B8BBE; /* azul claro Python */
+    border-bottom: 2px solid #306998; /* detalhe de separação opcional */
 }
 
 nav ul li {
@@ -31,31 +28,82 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #FFD43B; /* amarelo Python */
+    color: #333;
+    border-radius: 5px;
+}
+
+header h1 {
+    margin: 15px 0; /* espaço acima/abaixo do título */
+    font-size: 2em;
 }
 
 main {
     padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+main h2, main h3 {
+    color: #306998; /* azul escuro nos títulos */
+}
+
+button, .btn {
+    background-color: #4B8BBE; /* azul claro */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #306998; /* escurece no hover */
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #306998;
+    color: #ffffff;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form input[type="submit"], form button {
+    background-color: #4B8BBE;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover, form button:hover {
+    background-color: #306998;
 }
