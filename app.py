@@ -12,6 +12,11 @@ app.secret_key = 'sua_chave_secreta_aqui' # <-- MUDE ISTO PARA UMA CHAVE MAIS SE
 def home():
     return render_template("index.html")
 
+# Página da Equipe
+@app.route('/equipe')
+def equipe():
+    return render_template('equipe.html')
+
 # Página de Educação
 @app.route('/educational')
 def educational():

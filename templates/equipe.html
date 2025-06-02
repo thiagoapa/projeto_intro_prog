@@ -4,26 +4,37 @@
 {% block title %}Nossa Equipe{% endblock %}
 
 {% block content %}
-<section class="hero">
-    <h1>Nossa Equipe</h1>
-    <p>Somos graduandos em Sistemas para Internet e desenvolvemos este site para o projeto final da disciplina "Introdução à Programação".</p>
+<main>
+    <h2 class="section-title">Nossa Equipe</h2>
+    <p style="text-align: center; margin-bottom: 30px;">
+        Somos graduandos em Sistemas para Internet e desenvolvemos este site para o projeto final da disciplina "Introdução à Programação".
+    </p>
 
-    <div class="equipe">
-        <p><strong>Gabriele Salustino</strong><br>
-        Email para contato: gabrielegoncalvessilva@gmail.com</p>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Gabriele Salustino</h3>
+            <p>Email: gabrielegoncalvessilva@gmail.com</p>
+        </div>
 
-        <p><strong>Thiago Puentes</strong><br>
-        Email para contato: thiagopuentes@gmail.com</p>
+        <div class="feature-card">
+            <h3>Thiago Puentes</h3>
+            <p>Email: thiago_008@hotmail.com</p>
+        </div>
 
-        <p><strong>Tales Sousa</strong><br>
-        Email para contato: talessousa@gmail.com</p>
+        <div class="feature-card">
+            <h3>Tales Vitor</h3>
+            <p>Email: talesvitor@gmail.com</p>
+        </div>
 
-        <p><strong>Emmanuel</strong><br>
-        Email para contato: emmanuel@gmail.com</p>
+
     </div>
 
-    <p><strong>Para mais informações entre em contato através do número: (83) 9 9661-6921</strong></p>
+    <p style="text-align: center; margin: 40px 0 20px;">
+        <strong>Para mais informações, entre em contato: (83) 9 9128-3611</strong>
+    </p>
 
-    <a href="{{ url_for('index') }}" class="cta-button">Voltar</a>
-</section>
+    <div style="text-align: center;">
+        <a href="{{ url_for('home') }}" class="cta-button">Voltar</a>
+    </div>
+</main>
 {% endblock %}
