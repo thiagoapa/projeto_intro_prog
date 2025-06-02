@@ -1,0 +1,45 @@
+Algoritmo::Conjunto de passos bem definidos para resolver um problema.
+Variável::Espaço na memória para armazenar dados que podem mudar durante a execução.
+Constante::Valor que não muda durante a execução do programa.
+Tipo de dado::Categoria de dado, como int, float, str, bool, etc.
+Função::Bloco reutilizável de código que executa uma tarefa específica.
+Parâmetro::Valor passado para uma função.
+Retorno::Valor que uma função devolve após sua execução.
+Indentação::Espaçamento à esquerda do código, usado para definir blocos em Python.
+Loop::Estrutura que repete um bloco de código várias vezes.
+Iteração::Cada repetição de um loop.
+Condicional::Estrutura que executa blocos diferentes dependendo de uma condição.
+Expressão::Combinação de valores e operadores que resulta em um valor.
+Comando::Instrução que o computador executa.
+Bloco de código::Conjunto de comandos agrupados por indentação.
+Escopo::Região do programa onde uma variável está acessível.
+Global::Variável definida fora de funções, acessível de qualquer lugar.
+Local::Variável definida dentro de uma função, acessível apenas nela.
+Exceção::Erro que pode ser tratado durante a execução do código.
+Tratamento de exceções::Código que lida com erros usando try, except.
+Depuração::Processo de encontrar e corrigir erros no código.
+Compilação::Conversão do código para linguagem de máquina (não usado em Python puro).
+Interpretação::Execução linha por linha do código, como o Python faz.
+Script::Arquivo de código executável em Python.
+Módulo::Arquivo Python com funções ou classes reutilizáveis.
+Pacote::Conjunto de módulos organizados em pastas.
+Importação::Processo de usar funções e módulos externos com import.
+Biblioteca::Coleção de módulos e funções prontos para uso.
+Entrada de dados::Dados fornecidos ao programa, como com input().
+Saída de dados::Resultado exibido pelo programa, como com print().
+Iterável::Objeto que pode ser percorrido em um loop, como listas e strings.
+Enumerar::Atribuir índices aos elementos de uma sequência, com enumerate().
+Compreensão de listas::Forma concisa de criar listas com loop embutido.
+Mutável::Tipo de dado que pode ser alterado após ser criado (ex: listas).
+Imutável::Tipo de dado que não pode ser alterado após ser criado (ex: tuplas).
+Classe::Modelo para criar objetos com atributos e métodos.
+Objeto::Instância de uma classe.
+Método::Função definida dentro de uma classe.
+Atributo::Variável associada a um objeto ou classe.
+Herança::Capacidade de uma classe herdar características de outra.
+Encapsulamento::Ocultação dos dados internos de um objeto.
+Polimorfismo::Capacidade de usar o mesmo método com comportamentos diferentes.
+Programação Orientada a Objetos::Estilo de programação baseado em classes e objetos.
+Programação Funcional::Estilo que usa funções puras e evita estados mutáveis.
+Documentação::Descrição do funcionamento do código, geralmente em docstrings.
+Comentário::Texto no código que não é executado, usado para explicações.

@@ -1,0 +1,19 @@
+{% extends "base_dic.html" %}
+
+{% block content %}
+    <h1>Deletar Termo</h1>
+    {% if termos %}
+        <form method="POST" action="{{ url_for('deletar') }}">
+            <label for="termo_a_deletar">Selecionar Termo para Deletar:</label>
+            <select id="termo_a_deletar" name="termo_a_deletar" required>
+                <option value="">-- Selecione um termo --</option>
+                {% for termo, definicao in termos.items() %}
+                    <option value="{{ termo }}">{{ termo }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Deletar Termo">
+        </form>
+    {% else %}
+        <p>Não há termos para deletar no dicionário.</p>
+    {% endif %}
+{% endblock %}

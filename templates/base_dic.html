@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário de Termos</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; background-color: #f4f4f4; color: #333; }
+        .navbar { background-color: #333; padding: 15px 20px; margin-bottom: 25px; border-radius: 8px; display: flex; justify-content: flex-start; align-items: center; }
+        .navbar a { margin-right: 25px; text-decoration: none; color: #fff; font-weight: bold; transition: color 0.3s ease; }
+        .navbar a:hover { color: #007bff; }
+        .container { max-width: 800px; margin: 0 auto; background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #007bff; margin-bottom: 20px; }
+        .flash-message { padding: 12px 15px; margin-bottom: 15px; border-radius: 5px; font-weight: bold; animation: fadeOut 5s forwards; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .danger { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 12px; background-color: #f9f9f9; padding: 10px 15px; border-radius: 5px; border-left: 5px solid #007bff; }
+        li:nth-child(even) { background-color: #f0f0f0; border-left-color: #28a745; }
+        strong { color: #0056b3; }
+        form { margin-top: 25px; padding: 25px; border: 1px solid #eee; border-radius: 8px; background-color: #fdfdfd; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="text"], textarea, select {
+            width: calc(100% - 20px); /* Ajusta largura para considerar padding */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Inclui padding na largura total */
+            font-size: 1rem;
+        }
+        textarea { resize: vertical; min-height: 80px; }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        p { margin-top: 15px; color: #666; }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}">Visualizar Dicionário</a>
+        <a href="{{ url_for('adicionar') }}">Adicionar Termo</a>
+        <a href="{{ url_for('alterar') }}">Alterar Termo</a>
+        <a href="{{ url_for('deletar') }}">Deletar Termo</a>
+    </div>
+
+    <div class="container">
+        {# Exibe mensagens flash do Flask #}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="flash-message {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {# Conteúdo específico de cada página será inserido aqui #}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
