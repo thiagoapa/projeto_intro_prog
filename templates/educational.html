@@ -1,241 +1,77 @@
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Final IP</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+{% extends "base.html" %}
 
-        body {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
-                        url('https://wallpaperaccess.com/full/1119461.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #000000;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
+{% block title %}Educação{% endblock %}
 
-        body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, transparent 20%, #000 150%);
-            z-index: -1;
-        }
+{% block page_title %}Fundamentos da Programação em Python{% endblock %}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+{% block content %}
+<section class="hero">
+    <p>Python é uma linguagem de programação moderna, muito usada na tecnologia atual. Aprender Python é como aprender a falar com computadores — algo essencial no mundo cada vez mais digital.</p>
 
-        /* Header Styles */
-        header {
-            padding: 30px 0;
-            position: relative;
-            z-index: 10;
-        }
+    <div class="hero-content">
+        <div class="topic-section">
+            <h2 class="topic-title">Estrutura de programação em Python</h2>
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
+            <div class="topic-item">
+                <strong>a. Estruturas de Seleção (if, elif, else)</strong>
+                <p>Permitem que o programa tome decisões com base em condições.</p>
+                <div class="code-block">
+                    <code>idade = 18</code>
+                    <code>if idade >= 18:</code>
+                    <code>    print("Você pode entrar no castelo!")</code>
+                    <code>else:</code>
+                    <code>    print("Você é jovem demais, volte quando tiver 18.")</code>
+                </div>
+            </div>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            <div class="topic-item">
+                <strong>b. Estruturas de Repetição (for, while)</strong>
+                <p>Executam um bloco de código várias vezes, de acordo com uma condição ou intervalo.</p>
+                <div class="code-block">
+                    <code>for i in range(5):</code>
+                    <code>    print("Repetição número", i + 1)</code>
+                </div>
+            </div>
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
+            <div class="topic-item">
+                <strong>c. Vetores e Matrizes (listas)</strong>
+                <p>Listas armazenam múltiplos valores. Podem ser usadas como vetores (1D) ou matrizes (2D).</p>
+                <div class="code-block">
+                    <code>nomes = ["Ana", "Bruno", "Carlos"]</code>
+                    <code>print(nomes[0])  # Saída: Ana</code>
+                    <code>matriz = [[1, 2], [3, 4]]</code>
+                    <code>print(matriz[1][0])  # Saída: 3</code>
+                </div>
+            </div>
 
-        .nav-links li {
-            margin-left: 30px;
-        }
+            <div class="topic-item">
+                <strong>d. Funções e Procedimentos (def)</strong>
+                <p>Funções retornam valores; procedimentos apenas executam uma ação.</p>
+                <div class="code-block">
+                    <code>def somar(a, b):</code>
+                    <code>    return a + b</code>
+                    <code></code>
+                    <code>def mostrar_msg():</code>
+                    <code>    print("Operação concluída!")</code>
+                    <code></code>
+                    <code>print(somar(3, 4))  # Saída: 7</code>
+                    <code>mostrar_msg()       # Saída: Operação concluída!</code>
+                </div>
+            </div>
 
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a:hover {
-            color: #6a11cb;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-
-        .hero-content {
-            margin-top: 30px;
-            max-width: 800px;
-        }
-
-        .topic-section {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: rgba(30, 30, 50, 0.3);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .topic-title {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #e0e0e0;
-        }
-
-        .topic-item {
-            margin: 15px 0;
-            padding-left: 20px;
-            position: relative;
-            color: #c0c0c0;
-            line-height: 1.6;
-        }
-
-        .topic-item::before {
-            content: '●';
-            position: absolute;
-            left: 0;
-            color: #6a11cb;
-            font-size: 1.2rem;
-        }
-
-        .code-block {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            border-left: 3px solid #6a11cb;
-            overflow-x: auto;
-            line-height: 1.5;
-        }
-
-        .code-block code {
-            display: block;
-            color: #f8f8f8;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <nav>
-                <div class="logo">Cafe com Python</div>
-                <ul class="nav-links">
-                    <li><a href="equipe.html">Sobre Nós</a></li>
-                    <li><a href="educational.html">Tópicos</a></li>
-                    <li><a href="Termos.html">Termos</a></li>
-                    <li><a href="Pesquisar.html">Pesquisar</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <section class="hero">
-            <h1>Fundamentos da Programação em Python</h1>
-            <p>Python é uma linguagem de programação moderna, e muito usada na tecnologia atual. Aprender Python é como aprender a falar com computadores — algo essencial no mundo cada vez mais digital.</p>
-
-            <!-- CONTEÚDO ADICIONADO DEPOIS DO TÍTULO -->
-            <div class="hero-content">
-    <div class="topic-section">
-        <h2 class="topic-title">Estrutura de programação em Python</h2>
-
-        <div class="topic-item">
-            <strong>a. Estruturas de Seleção (if, elif, else)</strong>
-            <p>Permitem que o programa tome decisões com base em condições.</p>
-            <div class="code-block">
-                <code>idade = 18</code>
-                <code>if idade >= 18:</code>
-                <code>    print("Você pode entrar no castelo!")</code>
-                <code>else:</code>
-                <code>    print("Você é jovem demais, volte quando tiver 18.")</code>
+            <div class="topic-item">
+                <strong>Extra: Tratamento de Exceções (try/except)</strong>
+                <p>Permite lidar com erros de forma controlada, evitando que o programa quebre.</p>
+                <div class="code-block">
+                    <code>try:</code>
+                    <code>    numero = int(input("Digite um número: "))</code>
+                    <code>except ValueError:</code>
+                    <code>    print("Você digitou algo que não é número.")</code>
+                </div>
             </div>
         </div>
 
-        <div class="topic-item">
-            <strong>b. Estruturas de Repetição (for, while)</strong>
-            <p>Executam um bloco de código várias vezes, de acordo com uma condição ou intervalo.</p>
-            <div class="code-block">
-                <code>for i in range(5):</code>
-                <code>    print("Repetição número", i + 1)</code>
-            </div>
-        </div>
-
-        <div class="topic-item">
-            <strong>c. Vetores e Matrizes (listas)</strong>
-            <p>Listas armazenam múltiplos valores. Podem ser usadas como vetores (1D) ou matrizes (2D).</p>
-            <div class="code-block">
-                <code>nomes = ["Ana", "Bruno", "Carlos"]</code>
-                <code>print(nomes[0])  # Saída: Ana</code>
-                <code>matriz = [[1, 2], [3, 4]]</code>
-                <code>print(matriz[1][0])  # Saída: 3</code>
-            </div>
-        </div>
-
-        <div class="topic-item">
-            <strong>d. Funções e Procedimentos (def)</strong>
-            <p>Funções retornam valores; procedimentos apenas executam uma ação.</p>
-            <div class="code-block">
-                <code>def somar(a, b):</code>
-                <code>    return a + b</code>
-                <code></code>
-                <code>def mostrar_msg():</code>
-                <code>    print("Operação concluída!")</code>
-                <code></code>
-                <code>print(somar(3, 4))  # Saída: 7</code>
-                <code>mostrar_msg()       # Saída: Operação concluída!</code>
-            </div>
-        </div>
-
-        <div class="topic-item">
-            <strong>Extra: Tratamento de Exceções (try/except)</strong>
-            <p>Permite lidar com erros de forma controlada, evitando que o programa quebre.</p>
-            <div class="code-block">
-                <code>try:</code>
-                <code>    numero = int(input("Digite um número: "))</code>
-                <code>except ValueError:</code>
-                <code>    print("Você digitou algo que não é número.")</code>
-            </div>
-        </div>
+        <a href="{{ url_for('qa') }}" class="cta-button">Avançar</a>
     </div>
-
-    <a href="#" class="cta-button">Avançar</a>
-</div>
+</section>
+{% endblock %}
