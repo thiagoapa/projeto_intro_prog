@@ -5,73 +5,78 @@
 {% block page_title %}Fundamentos da Programação em Python{% endblock %}
 
 {% block content %}
+
+<!-- Seção de destaque -->
 <section class="hero">
     <p>Python é uma linguagem de programação moderna, muito usada na tecnologia atual. Aprender Python é como aprender a falar com computadores — algo essencial no mundo cada vez mais digital.</p>
+    <a href="#conteudo" class="cta-button">Explorar Conteúdo</a>
+</section>
 
-    <div class="hero-content">
-        <div class="topic-section">
-            <h2 class="topic-title">Estrutura de programação em Python</h2>
+<!-- Seção de conteúdo com fundo branco -->
+<main id="conteudo">
+    <div class="topic-section">
+        <h2 class="section-title">Estrutura de programação em Python</h2>
 
-            <div class="topic-item">
-                <strong>a. Estruturas de Seleção (if, elif, else)</strong>
-                <p>Permitem que o programa tome decisões com base em condições.</p>
-                <div class="code-block">
-                    <code>idade = 18</code>
-                    <code>if idade >= 18:</code>
-                    <code>    print("Você pode entrar no castelo!")</code>
-                    <code>else:</code>
-                    <code>    print("Você é jovem demais, volte quando tiver 18.")</code>
-                </div>
-            </div>
-
-            <div class="topic-item">
-                <strong>b. Estruturas de Repetição (for, while)</strong>
-                <p>Executam um bloco de código várias vezes, de acordo com uma condição ou intervalo.</p>
-                <div class="code-block">
-                    <code>for i in range(5):</code>
-                    <code>    print("Repetição número", i + 1)</code>
-                </div>
-            </div>
-
-            <div class="topic-item">
-                <strong>c. Vetores e Matrizes (listas)</strong>
-                <p>Listas armazenam múltiplos valores. Podem ser usadas como vetores (1D) ou matrizes (2D).</p>
-                <div class="code-block">
-                    <code>nomes = ["Ana", "Bruno", "Carlos"]</code>
-                    <code>print(nomes[0])  # Saída: Ana</code>
-                    <code>matriz = [[1, 2], [3, 4]]</code>
-                    <code>print(matriz[1][0])  # Saída: 3</code>
-                </div>
-            </div>
-
-            <div class="topic-item">
-                <strong>d. Funções e Procedimentos (def)</strong>
-                <p>Funções retornam valores; procedimentos apenas executam uma ação.</p>
-                <div class="code-block">
-                    <code>def somar(a, b):</code>
-                    <code>    return a + b</code>
-                    <code></code>
-                    <code>def mostrar_msg():</code>
-                    <code>    print("Operação concluída!")</code>
-                    <code></code>
-                    <code>print(somar(3, 4))  # Saída: 7</code>
-                    <code>mostrar_msg()       # Saída: Operação concluída!</code>
-                </div>
-            </div>
-
-            <div class="topic-item">
-                <strong>Extra: Tratamento de Exceções (try/except)</strong>
-                <p>Permite lidar com erros de forma controlada, evitando que o programa quebre.</p>
-                <div class="code-block">
-                    <code>try:</code>
-                    <code>    numero = int(input("Digite um número: "))</code>
-                    <code>except ValueError:</code>
-                    <code>    print("Você digitou algo que não é número.")</code>
-                </div>
+        <div class="topic-item">
+            <strong>a. Estruturas de Seleção (if, elif, else)</strong>
+            <p>Permitem que o programa tome decisões com base em condições.</p>
+            <div class="code-block">
+                <code>idade = 18</code>
+                <code>if idade &gt;= 18:</code>
+                <code>    print("Você pode entrar no castelo!")</code>
+                <code>else:</code>
+                <code>    print("Você é jovem demais, volte quando tiver 18.")</code>
             </div>
         </div>
 
-        <a href="{{ url_for('qa') }}" class="cta-button">Avançar</a>
+        <div class="topic-item">
+            <strong>b. Estruturas de Repetição (for, while)</strong>
+            <p>Executam um bloco de código várias vezes, de acordo com uma condição ou intervalo.</p>
+            <div class="code-block">
+                <code>for i in range(5):</code>
+                <code>    print("Repetição número", i + 1)</code>
+            </div>
+        </div>
+
+        <div class="topic-item">
+            <strong>c. Vetores e Matrizes (listas)</strong>
+            <p>Listas armazenam múltiplos valores. Podem ser usadas como vetores (1D) ou matrizes (2D).</p>
+            <div class="code-block">
+                <code>nomes = ["Ana", "Bruno", "Carlos"]</code>
+                <code>print(nomes[0])  # Saída: Ana</code>
+                <code>matriz = [[1, 2], [3, 4]]</code>
+                <code>print(matriz[1][0])  # Saída: 3</code>
+            </div>
+        </div>
+
+        <div class="topic-item">
+            <strong>d. Funções e Procedimentos (def)</strong>
+            <p>Funções retornam valores; procedimentos apenas executam uma ação.</p>
+            <div class="code-block">
+                <code>def somar(a, b):</code>
+                <code>    return a + b</code>
+                <code></code>
+                <code>def mostrar_msg():</code>
+                <code>    print("Operação concluída!")</code>
+                <code></code>
+                <code>print(somar(3, 4))  # Saída: 7</code>
+                <code>mostrar_msg()       # Saída: Operação concluída!</code>
+            </div>
+        </div>
+
+        <div class="topic-item">
+            <strong>Extra: Tratamento de Exceções (try/except)</strong>
+            <p>Permite lidar com erros de forma controlada, evitando que o programa quebre.</p>
+            <div class="code-block">
+                <code>try:</code>
+                <code>    numero = int(input("Digite um número: "))</code>
+                <code>except ValueError:</code>
+                <code>    print("Você digitou algo que não é número.")</code>
+            </div>
+        </div>
     </div>
-</section>
+
+    <a href="{{ url_for('qa') }}" class="cta-button">Avançar</a>
+</main>
+
 {% endblock %}
